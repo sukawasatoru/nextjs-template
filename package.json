@@ -1,0 +1,47 @@
+{
+  "name": "nextjs-template",
+  "version": "0.1.0",
+  "description": "",
+  "author": {
+    "name": "Satoru Sukawa",
+    "email": "sukawasatoru.github@outlook.jp",
+    "url": "https://github.com/sukawasatoru"
+  },
+  "license": "Apache-2.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "bundle-analyzer": "BUNDLE_ANALYZER=1 npm run build",
+    "dev": "next dev",
+    "export": "next build && next export",
+    "lint:fix": "next lint --fix",
+    "lint:list": "next lint",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sukawasatoru/nextjs-template.git"
+  },
+  "dependencies": {
+    "@headlessui/react": "1.7.3",
+    "@heroicons/react": "2.0.12",
+    "@js-temporal/polyfill": "0.4.3",
+    "@types/node": "18.11.7",
+    "@types/react": "18.0.24",
+    "@types/react-dom": "18.0.8",
+    "@typescript-eslint/eslint-plugin": "5.41.0",
+    "@typescript-eslint/parser": "5.41.0",
+    "autoprefixer": "10.4.13",
+    "clsx": "1.2.1",
+    "eslint": "8.26.0",
+    "eslint-config-next": "13.0.0",
+    "fork-ts-checker-webpack-plugin": "7.2.13",
+    "next": "13.0.0",
+    "postcss": "8.4.18",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.2.1",
+    "typescript": "4.8.4",
+    "webpack-bundle-analyzer": "4.7.0"
+  }
+}
