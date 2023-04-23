@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 sukawasatoru
+ * Copyright 2022, 2023 sukawasatoru
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 import {Listbox, Transition} from '@headlessui/react';
 import {ComputerDesktopIcon, MoonIcon, SunIcon} from '@heroicons/react/24/solid';
 import clsx from 'clsx';
-import {ComponentProps, FC, Fragment, useEffect, useMemo, useRef, useState} from 'react';
+import {FC, Fragment, useEffect, useMemo, useRef, useState} from 'react';
 import {repo as prefsRepo} from '@/data/repository/preferences-repository';
 import {useIsomorphicLayoutEffect} from '@/function/isomorphic-layout-effect';
 import {Appearance} from '@/model/appearance';
@@ -92,21 +92,17 @@ const useAppearance = (): [Appearance | undefined, (value: Appearance) => void, 
   return [appearance, setAppearance, isSystemDark];
 };
 
-const iconMap: Record<Appearance, FC<ComponentProps<'svg'>>> = {
+const iconMap = {
   light: SunIcon,
   dark: MoonIcon,
   system: ComputerDesktopIcon,
 };
 
-export interface Props extends Omit<ComponentProps<'div'>, 'children'> {
-  // nothing.
-}
-
-export const AppearanceSelector: FC<Props> = (props) => {
+export const AppearanceSelector: FC = () => {
   const [appearance, setAppearance, isSystemDark] = useAppearance();
 
   const ButtonIcon = useMemo(() => {
-    const funcs: Record<Appearance, () => FC<ComponentProps<'svg'>>> = {
+    const funcs = {
       light() {
         return iconMap['light'];
       },
@@ -121,7 +117,7 @@ export const AppearanceSelector: FC<Props> = (props) => {
     return appearance && funcs[appearance]() || undefined;
   }, [appearance, isSystemDark]);
 
-  return <Listbox as="div" {...props} value={appearance} onChange={setAppearance}>
+  return <Listbox as="div" value={appearance} onChange={setAppearance}>
     <Listbox.Label className="sr-only">
       Theme
     </Listbox.Label>

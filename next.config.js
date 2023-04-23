@@ -1,5 +1,5 @@
 /*
- * Copyright 2019, 2021, 2022 sukawasatoru
+ * Copyright 2019, 2021, 2022, 2023 sukawasatoru
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 
 'use strict';
+// @ts-check
 
 const {access, symlink} = require('fs/promises');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
@@ -27,6 +28,7 @@ const config = {
   // experimental: {
   //   runtime: 'experimental-edge',
   // },
+  output: 'export',
   poweredByHeader: false,
   reactStrictMode: true,
   staticPageGenerationTimeout: 30,
