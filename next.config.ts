@@ -33,9 +33,10 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   staticPageGenerationTimeout: 30,
+  output: 'export',
   experimental: {
     typedRoutes: true,
-  }
+  },
 };
 
 const pathContext = process.env.PATH_CONTEXT;
