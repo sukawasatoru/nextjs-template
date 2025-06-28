@@ -1,5 +1,5 @@
 /*
- * Copyright 2022, 2023 sukawasatoru
+ * Copyright 2022, 2025 sukawasatoru
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +14,10 @@
  * limitations under the License.
  */
 
-'use strict';
-// @ts-check
-
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    './src/pages/**/*.{jsx,tsx}',
-    './src/components/**/*.{jsx,tsx}',
-  ],
-  darkMode: 'class',
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-  safelist: [
-    process.env.NODE_ENV === 'development' && {pattern: /.*/},
-  ].filter(data => data),
+const config = {
+  plugins: {
+    '@tailwindcss/postcss': {},
+  }
 };
+
+export default config;
