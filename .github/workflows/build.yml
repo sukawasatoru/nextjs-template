@@ -20,7 +20,7 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
       - run: npm ci
-      - run: npm run export
+      - run: npx next export
       - uses: actions/upload-artifact@v4
         with:
           name: artifact
